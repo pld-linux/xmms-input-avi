@@ -13,7 +13,7 @@ URL:		http://www.xmms.org/plugins_input.html#122
 BuildRequires:	SDL-devel >= 1.2.0
 #BuildRequires:	autoconf
 #BuildRequires:	automake
-BuildRequires:	avifile-devel >= 0.6
+BuildRequires:	avifile-devel >= 1:0.6
 BuildRequires:	libstdc++-devel
 #BuildRequires:	libtool
 BuildRequires:	rpmbuild(macros) >= 1.125
