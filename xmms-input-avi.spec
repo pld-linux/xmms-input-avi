@@ -2,7 +2,7 @@ Summary:	avi/asf video playing plugin for XMMS
 Summary(pl):	Wtyczka odtwarzaj±ca filmy avi/asf dla XMMS
 Name:		xmms-input-avi
 Version:	1.2.3
-Release:	0.9
+Release:	0.10
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	ftp://ftp.xmms.org/xmms/plugins/avi-xmms/avi-xmms-%{version}.tar.gz
@@ -16,12 +16,11 @@ BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	avifile-devel >= 0.6
 BuildRequires:	libstdc++-devel
 #BuildRequires:	libtool
+BuildRequires:	rpmbuild(macros) >= 1.125
 BuildRequires:	xmms-devel >= 1.2.3
 Requires:	xmms
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_prefix		/usr/X11R6
 
 %description
 The AVI player is a plug-in for XMMS, giving it the ability to play
@@ -56,7 +55,8 @@ jak fullscreen i akceleracja sprzêtowa pod XFree86 4.x.x.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -64,4 +64,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS TODO NEWS README ChangeLog
-%attr(755,root,root) %{_libdir}/xmms/Input/*.so
+%attr(755,root,root) %{xmms_input_plugindir}/*.so
