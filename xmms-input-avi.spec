@@ -5,8 +5,6 @@ Version:	1.2.2
 Release:	2
 License:	GPL
 Group:		X11/Applications/Multimedia
-Group(de):	X11/Applikationen/Multimedia
-Group(pl):	X11/Aplikacje/Multimedia
 Source0:	ftp://ftp.xmms.org/xmms/plugins/avi-xmms/avi-xmms-%{version}.tar.gz
 Patch0:		avi-xmms-avifile.patch
 Patch1:		avi-xmms-thread.patch
