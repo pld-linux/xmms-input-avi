@@ -15,6 +15,9 @@ BuildRequires:	avifile-devel >= 0.6
 BuildRequires:	gtk+-devel >= 1.2.2
 BuildRequires:	libstdc++-devel
 BuildRequires:	xmms-devel >= 1.2.3
+BuildRequires:	alsa-lib-devel
+BuildRequires:	arts-devel
+BuildRequires:	esound-devel
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	libtool
@@ -40,7 +43,6 @@ Ta wtyczka pozwala xmms'owi odtwarzaæ filmy w formacie avi/asf.
 rm missing
 libtoolize --copy --force
 aclocal
-autoheader
 autoconf
 automake -a -c
 %configure 
