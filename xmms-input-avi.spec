@@ -7,9 +7,9 @@ Group:		X11/Applications/Multimedia
 Group(de):	X11/Applikationen/Multimedia
 Group(pl):	X11/Aplikacje/Multimedia
 License:	GPL
-Source0:	http://www.xmms.org/files/plugins/smpeg-xmms/smpeg-xmms-%{version}.tar.gz
 Source0:	ftp://ftp.xmms.org/xmms/plugins/avi-xmms/avi-xmms-%{version}.tar.gz
 Patch0:		avi-xmms-avifile.patch
+Patch1:		avi-xmms-thread.patch
 Requires:	xmms
 BuildRequires:	SDL-devel >= 1.1.6
 BuildRequires:	libstdc++-devel
@@ -32,8 +32,13 @@ Ta wtyczka pozwala xmms'owi odtwarzaæ filmy w formacie avi/asf.
 %prep
 %setup -q -n avi-xmms-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
+automake -a -c
+aclocal
+autoheader
+autoconf
 %configure 
 
 %{__make} 
