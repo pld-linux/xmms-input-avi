@@ -1,0 +1,67 @@
+diff -urN avi-xmms-1.2.2/configure.in avi-xmms/configure.in
+--- avi-xmms-1.2.2/configure.in	Mon Jan 29 23:58:20 2001
++++ avi-xmms/configure.in	Tue Feb 13 22:07:51 2001
+@@ -42,6 +42,7 @@
+ 
+ dnl Checks for library functions.
+ AC_HEADER_STDC
++AC_CHECK_FUNCS(unsetenv)
+ 
+ CC=g++
+ AM_PROG_LIBTOOL
+diff -urN avi-xmms-1.2.2/src/caviplay.cpp avi-xmms/src/caviplay.cpp
+--- avi-xmms-1.2.2/src/caviplay.cpp	Mon Jan 29 23:51:39 2001
++++ avi-xmms/src/caviplay.cpp	Tue Feb 13 22:07:51 2001
+@@ -28,7 +28,7 @@
+ int doing_output;
+ 
+ 
+-#if defined(__svr4__)
++#if !HAVE_UNSETENV
+ static void unsetenv(const char *name)
+ {
+     extern char **environ;
+@@ -59,7 +59,8 @@
+     double len;
+     SDL_Rect rect; //output rect
+     SDL_mutex *gui,*sweep;
+-    cPlayerData():dest(0),yuv(0),avi(0),bpp(24),gui(0) {}
++    SDL_Thread *thread;
++    cPlayerData():dest(0),yuv(0),avi(0),bpp(24),gui(0),thread(0) {}
+ };
+ 
+ 
+@@ -661,6 +662,9 @@
+ 
+ cPlayer::~cPlayer()
+ {
++    unsetenv("SDL_VIDEO_CENTERED");
++    unsetenv("SDL_VIDEO_X11_NODIRECTCOLOR");
++
+     SDL_DestroyMutex(dd.gui);
+     SDL_DestroyMutex(dd.sweep);    
+     delete &dd;
+@@ -716,7 +720,7 @@
+     hwtype(avicfg.doYUV);
+     postype(avicfg.doPosition);        
+     
+-    SDL_CreateThread(thread_video,(void *)this);
++    dd.thread = SDL_CreateThread(thread_video,(void *)this);
+ 
+     SDL_mutexV(dd.gui);    
+     
+@@ -754,10 +758,13 @@
+ int cPlayer::close()
+ {
+     //////////////////// WAIT FOR VIDEO THREAD TO STOP //////////////////////
+-    if (!needResize!=-1)
++    if (needResize!=-1)
+     {
+         needResize=2;
+         while(needResize!=-1) SDL_Delay(50);
++
++	SDL_WaitThread(dd.thread, NULL);
++	dd.thread=0;
+     }
+ 
+     //////////// SET DUMMY CALLBACKS TO DISABLE OUTPUT AND NOFITY ///////////
