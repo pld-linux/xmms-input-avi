@@ -1,0 +1,15 @@
+diff -urN avi-xmms-1.2.2.org/src/caviplay.cpp avi-xmms-1.2.2/src/caviplay.cpp
+--- avi-xmms-1.2.2.org/src/caviplay.cpp	Fri Feb 16 22:29:43 2001
++++ avi-xmms-1.2.2/src/caviplay.cpp	Fri Feb 16 22:31:23 2001
+@@ -680,10 +680,8 @@
+ 
+     current=this; // setup pointer for global routines
+     
+-    dd.avi = CreateAviPlayer();
++    dd.avi = CreateAviPlayer(filename,dd.bpp);
+     if (!dd.avi) return 0;
+-
+-    dd.avi->initPlayer(filename,dd.bpp); //TODO: implement subtitles
+ 
+     if (!dd.avi->isValid()) {delete dd.avi;return 0;}
+ 
