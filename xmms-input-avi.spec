@@ -36,7 +36,7 @@ Ta wtyczka pozwala XMMS-owi odtwarzaæ filmy w formacie avi/asf.
 %build
 rm -f missing
 %{__libtoolize}
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure
