@@ -6,6 +6,7 @@ Release:	0.9
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	ftp://ftp.xmms.org/xmms/plugins/avi-xmms/avi-xmms-%{version}.tar.gz
+# Source0-md5:	1eb3ce58d21ec00b38d7786363ff271c
 Patch0:		avi-xmms-avifile.patch
 Patch2:		avi-xmms-am.patch
 URL:		http://www.xmms.org/plugins_input.html#122
