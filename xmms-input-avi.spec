@@ -10,11 +10,11 @@ Patch0:		avi-xmms-avifile.patch
 Patch2:		avi-xmms-am.patch
 URL:		http://www.xmms.org/plugins_input.html#122
 BuildRequires:	SDL-devel >= 1.2.0
-BuildRequires:	autoconf
-BuildRequires:	automake
+#BuildRequires:	autoconf
+#BuildRequires:	automake
 BuildRequires:	avifile-devel >= 0.6
 BuildRequires:	libstdc++-devel
-BuildRequires:	libtool
+#BuildRequires:	libtool
 BuildRequires:	xmms-devel >= 1.2.3
 Requires:	xmms
 ExclusiveArch:	%{ix86}
@@ -23,12 +23,19 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_prefix		/usr/X11R6
 
 %description
-The AVI player is a plug-in for XMMS, giving it the ability to play Windows AVI
-(including DivX ;-)) and ASF files on your Linux or FreeBSD box. You can simply
-add movies to your playlist and the plug-in will call aviplay to play the movie
-files. Many aviplay options are supported, such as fullscreen playback and true
-hardware acceleration on XFree86 4.x.x.
-It plays .wma files too.
+The AVI player is a plug-in for XMMS, giving it the ability to play
+Windows AVI (including DivX ;-)), ASF and WMA files on your Linux or
+FreeBSD box. You can simply add movies to your playlist and the
+plug-in will call aviplay to play the movie files. Many aviplay
+options are supported, such as fullscreen playback and true hardware
+acceleration on XFree86 4.x.x.
+
+%description -l pl
+AVI player to wtyczka dla XMMS daj±ca mo¿liwo¶æ odtwarzania plików AVI
+(w³±cznie z DivX ;-)), ASF i WMA z Windows pod Linuksem i FreeBSD.
+Mo¿na ³atwo dodawaæ filmy do listy, a wtyczka uruchomi aviplay, aby
+odtworzy³ te pliki. Obs³ugiwanych jest wiele opcji aviplaya, takich
+jak fullscreen i akceleracja sprzêtowa pod XFree86 4.x.x.
 
 %prep
 %setup -q -n avi-xmms-%{version}
