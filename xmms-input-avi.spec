@@ -11,11 +11,15 @@ Source0:	ftp://ftp.xmms.org/xmms/plugins/avi-xmms/avi-xmms-%{version}.tar.gz
 Patch0:		avi-xmms-avifile.patch
 Patch1:		avi-xmms-thread.patch
 BuildRequires:	SDL-devel >= 1.2.0
-BuildRequires:	avifile-devel >= 0.6.0
+BuildRequires:	avifile-devel >= 0.6
 BuildRequires:	gtk+-devel >= 1.2.2
 BuildRequires:	libstdc++-devel
 BuildRequires:	xmms-devel >= 1.2.3
+BuildRequires:	automake
+BuildRequires:	autoconf
+BuildRequires:	libtool
 Requires:	xmms
+ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -33,6 +37,8 @@ Ta wtyczka pozwala xmms'owi odtwarzaæ filmy w formacie avi/asf.
 %patch1 -p1
 
 %build
+rm missing
+libtoolize --copy --force
 aclocal
 autoheader
 autoconf
