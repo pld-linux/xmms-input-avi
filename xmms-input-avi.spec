@@ -44,10 +44,10 @@ jak fullscreen i akceleracja sprzêtowa pod XFree86 4.x.x.
 
 %build
 #rm -f missing
-#%{__libtoolize}
-#%{__aclocal}
-#%{__autoconf}
-#%{__automake}
+#%%{__libtoolize}
+#%%{__aclocal}
+#%%{__autoconf}
+#%%{__automake}
 %configure2_13
 
 %{__make}
