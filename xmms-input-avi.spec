@@ -2,7 +2,7 @@ Summary:	avi/asf video playing plugin for XMMS
 Summary(pl):	Wtyczka odtwarzaj±ca filmy avi/asf dla XMMS
 Name:		xmms-input-avi
 Version:	1.2.3
-Release:	0.10
+Release:	0.11
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	ftp://ftp.xmms.org/xmms/plugins/avi-xmms/avi-xmms-%{version}.tar.gz
@@ -18,7 +18,6 @@ BuildRequires:	libstdc++-devel
 #BuildRequires:	libtool
 BuildRequires:	rpmbuild(macros) >= 1.125
 BuildRequires:	xmms-devel >= 1.2.3
-Requires:	xmms
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
