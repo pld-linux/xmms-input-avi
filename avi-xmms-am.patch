@@ -1,0 +1,13 @@
+--- avi-xmms-1.2.2/src/Makefile.am.orig	Tue Jun 11 21:59:12 2002
++++ avi-xmms-1.2.2/src/Makefile.am	Tue Jun 11 21:59:31 2002
+@@ -4,8 +4,8 @@
+ 
+ libavixmms_la_LDFLAGS = -module -avoid-version
+ 
+-INCLUDES += @AVIFILE_CFLAGS@ @XMMS_CFLAGS@ @SDL_CFLAGS@ @GTK_CFLAGS@
+-libavixmms_la_LIBADD += @AVIFILE_LIBS@ @XMMS_LIBS@ @PTHREAD_LIBS@ @SDL_LIBS@ @GTK_LIBS@
++INCLUDES = @AVIFILE_CFLAGS@ @XMMS_CFLAGS@ @SDL_CFLAGS@ @GTK_CFLAGS@
++libavixmms_la_LIBADD = @AVIFILE_LIBS@ @XMMS_LIBS@ @PTHREAD_LIBS@ @SDL_LIBS@ @GTK_LIBS@
+ 
+ libavixmms_la_SOURCES = caviplay.cpp avi-xmms.cpp zoomer.cpp cfgvalues.cpp intgtk.cpp keyproc.cpp ctrackbar.cpp avi-xmms.h zoomer.h cfgvalues.h caviplay.h ctrackbar.h
+ 
