@@ -2,22 +2,20 @@ Summary:	avi/asf video playing plugin for xmms
 Summary(pl):	Wtyczka odtwarzaj±ca filmy avi/asf dla xmms
 Name:		xmms-input-avi
 Version:	1.2.2
-Release:	1
+Release:	2
+License:	GPL
 Group:		X11/Applications/Multimedia
 Group(de):	X11/Applikationen/Multimedia
 Group(pl):	X11/Aplikacje/Multimedia
-License:	GPL
 Source0:	ftp://ftp.xmms.org/xmms/plugins/avi-xmms/avi-xmms-%{version}.tar.gz
 Patch0:		avi-xmms-avifile.patch
 Patch1:		avi-xmms-thread.patch
-Requires:	xmms
-BuildRequires:	SDL-devel >= 1.1.6
-BuildRequires:	libstdc++-devel
-BuildRequires:	xmms-devel >= 1.2.3
+BuildRequires:	SDL-devel >= 1.2.0
 BuildRequires:	avifile-devel >= 0.6.0
-BuildRequires:	glib-devel >= 1.2.2
 BuildRequires:	gtk+-devel >= 1.2.2
 BuildRequires:	libstdc++-devel
+BuildRequires:	xmms-devel >= 1.2.3
+Requires:	xmms
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -35,10 +33,10 @@ Ta wtyczka pozwala xmms'owi odtwarzaæ filmy w formacie avi/asf.
 %patch1 -p1
 
 %build
-automake -a -c
 aclocal
 autoheader
 autoconf
+automake -a -c
 %configure 
 
 %{__make} 
