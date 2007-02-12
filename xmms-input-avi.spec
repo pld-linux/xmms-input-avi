@@ -1,5 +1,5 @@
 Summary:	avi/asf video playing plugin for XMMS
-Summary(pl.UTF-8):   Wtyczka wejściowa dla XMMS-a odtwarzająca filmy avi/asf
+Summary(pl.UTF-8):	Wtyczka wejściowa dla XMMS-a odtwarzająca filmy avi/asf
 Name:		xmms-input-avi
 Version:	1.2.3
 Release:	0.11
