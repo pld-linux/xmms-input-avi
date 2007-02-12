@@ -1,5 +1,5 @@
 Summary:	avi/asf video playing plugin for XMMS
-Summary(pl):	Wtyczka wej¶ciowa dla XMMS-a odtwarzaj±ca filmy avi/asf
+Summary(pl.UTF-8):   Wtyczka wejÅ›ciowa dla XMMS-a odtwarzajÄ…ca filmy avi/asf
 Name:		xmms-input-avi
 Version:	1.2.3
 Release:	0.11
@@ -29,12 +29,12 @@ plug-in will call aviplay to play the movie files. Many aviplay
 options are supported, such as fullscreen playback and true hardware
 acceleration on XFree86 4.x.x.
 
-%description -l pl
-AVI player to wtyczka dla XMMS-a daj±ca mo¿liwo¶æ odtwarzania plików AVI
-(w³±cznie z DivX ;-)), ASF i WMA z Windows pod Linuksem i FreeBSD.
-Mo¿na ³atwo dodawaæ filmy do listy, a wtyczka uruchomi aviplay, aby
-odtworzy³ te pliki. Obs³ugiwanych jest wiele opcji aviplaya, takich
-jak fullscreen i akceleracja sprzêtowa pod XFree86 4.x.x.
+%description -l pl.UTF-8
+AVI player to wtyczka dla XMMS-a dajÄ…ca moÅ¼liwoÅ›Ä‡ odtwarzania plikÃ³w AVI
+(wÅ‚Ä…cznie z DivX ;-)), ASF i WMA z Windows pod Linuksem i FreeBSD.
+MoÅ¼na Å‚atwo dodawaÄ‡ filmy do listy, a wtyczka uruchomi aviplay, aby
+odtworzyÅ‚ te pliki. ObsÅ‚ugiwanych jest wiele opcji aviplaya, takich
+jak fullscreen i akceleracja sprzÄ™towa pod XFree86 4.x.x.
 
 %prep
 %setup -q -n avi-xmms-%{version}
