@@ -38,8 +38,8 @@ jak fullscreen i akceleracja sprzętowa pod XFree86 4.x.x.
 
 %prep
 %setup -q -n avi-xmms-%{version}
-#%patch0 -p1
-#%patch2 -p1
+#%%patch0 -p1
+#%%patch2 -p1
 
 %build
 #rm -f missing
